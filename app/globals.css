@@ -7,6 +7,7 @@ body {
   max-width: 100vw;
   overflow-x: hidden;
   background-color: #e3e3e3;
+  color: black;
 }
 
 .container {
