@@ -1,5 +1,11 @@
 import { getPosts } from '@/app/blog/http/handlers';
 import Link from 'next/link';
+import { Metadata } from 'next';
+
+export const metadata: Metadata = {
+  title: 'Blog',
+  description: 'List of blog entries',
+};
 
 const Blog = async () => {
   const posts = await getPosts();

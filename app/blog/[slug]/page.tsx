@@ -4,11 +4,13 @@ import type { Metadata, NextPage } from 'next';
 import { getPosts } from '@/app/blog/http/handlers';
 import type { IPost } from '@/types/post';
 
+interface IBlogPost {
+  params: { slug: string };
+}
+
 export const generateMetadata = async ({
   params: { slug },
-}: {
-  params: { slug: string };
-}): Promise<Metadata> => {
+}: IBlogPost): Promise<Metadata> => {
   const post = await getPosts().then(posts =>
     posts.find(post => post.slug === slug),
   );
@@ -26,9 +28,7 @@ export const generateStaticParams = async () => {
   return posts.map(post => ({ slug: post.slug }));
 };
 
-const BlogPost: NextPage<{ params: { slug: string } }> = async ({
-  params: { slug },
-}) => {
+const BlogPost: NextPage<IBlogPost> = async ({ params: { slug } }) => {
   const post = await getPosts().then(posts =>
     posts.find(post => post.slug === slug),
   );
