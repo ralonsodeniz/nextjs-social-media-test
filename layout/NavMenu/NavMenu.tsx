@@ -1,7 +1,7 @@
 import Image from 'next/image';
 import Link from 'next/link';
 
-import Buttons from '@/components/AuthButtons';
+import Buttons from './AuthButtons';
 
 import styles from './NavMenu.module.css';
 

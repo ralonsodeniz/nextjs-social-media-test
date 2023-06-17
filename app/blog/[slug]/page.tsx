@@ -30,7 +30,7 @@ export const generateStaticParams = async () => {
   return posts.map(post => ({ slug: post.slug }));
 };
 
-const BlogPostPage: NextPage<{ params: { slug: string } }> = async ({
+const BlogPost: NextPage<{ params: { slug: string } }> = async ({
   params: { slug },
 }) => {
   const post = await getPost(slug);
@@ -45,4 +45,4 @@ const BlogPostPage: NextPage<{ params: { slug: string } }> = async ({
   );
 };
 
-export default BlogPostPage;
+export default BlogPost;

@@ -5,7 +5,7 @@ import { signIn, useSession } from 'next-auth/react';
 import Link from 'next/link';
 import Image from 'next/image';
 import Spinner from '@/components/Spinner';
-import SignOut from '@/components/AuthButtons/SingOut';
+import SignOut from '@/layout/NavMenu/AuthButtons/SingOut';
 
 import styles from './AuthButtons.module.css';
 
@@ -16,7 +16,7 @@ const SingIn = () => {
       <Link href="/dashboard">
         <Image
           src={session?.user?.image ?? '/mememan.webp'}
-          alt="user avatar"
+          alt={`${session?.user?.name ?? 'user'}'s avatar`}
           width={32}
           height={32}
         />
