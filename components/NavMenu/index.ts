@@ -1,3 +1,3 @@
-import NavMenu from '@/components/NavMenu/NavMenu';
+import NavMenu from './NavMenu';
 
 export default NavMenu;

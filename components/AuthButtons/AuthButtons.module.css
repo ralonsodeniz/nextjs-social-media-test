@@ -1,0 +1,14 @@
+.avatar button {
+  display: none;
+}
+
+.avatar:hover {
+  position: relative;
+}
+
+.avatar:hover button {
+  display: block;
+  position: absolute;
+  right: 0;
+  width: max-content;
+}
