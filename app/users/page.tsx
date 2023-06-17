@@ -7,11 +7,13 @@ const Users = async () => {
   const users = await prisma.user.findMany();
 
   return (
-    <ul className={styles.grid}>
-      {users.map(user => (
-        <Card key={user.id} {...user} />
-      ))}
-    </ul>
+    <main>
+      <ul className={styles.grid}>
+        {users.map(user => (
+          <Card key={user.id} {...user} />
+        ))}
+      </ul>
+    </main>
   );
 };
 
