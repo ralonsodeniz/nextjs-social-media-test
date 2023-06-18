@@ -3,6 +3,7 @@ import type { Metadata } from 'next';
 import { prisma } from '@/lib/prisma';
 import { notFound } from 'next/navigation';
 import Image from 'next/image';
+import FollowButton from '@/components/FollowButton';
 
 export const dynamic = 'force-dynamic';
 
@@ -41,6 +42,7 @@ const UserProfile = async ({ params: { id } }: IUserProfile) => {
       />
       <h3>Bio</h3>
       <p>{bio ?? 'info not available'}</p>
+      <FollowButton targetUserId={id} />
     </main>
   );
 };
