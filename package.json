@@ -7,7 +7,8 @@
     "build": "next build",
     "start": "next start",
     "lint": "next lint",
-    "prisma:migrate:dev": "npx prisma migrate dev"
+    "prisma:migrate:dev": "npx prisma migrate dev",
+    "prisma:generate": "npx prisma generate"
   },
   "dependencies": {
     "@next-auth/prisma-adapter": "^1.0.7",

@@ -29,8 +29,7 @@ model Account {
   scope                    String?
   id_token                 String? @db.Text
   session_state            String?
-
-  user User @relation(fields: [userId], references: [id], onDelete: Cascade)
+  user                     User    @relation(fields: [userId], references: [id], onDelete: Cascade)
 
   @@unique([provider, providerAccountId])
 }
@@ -53,6 +52,17 @@ model User {
   image         String?
   accounts      Account[]
   sessions      Session[]
+  followedBy    Follows[] @relation("following")
+  following     Follows[] @relation("follower")
+}
+
+model Follows {
+  follower    User   @relation("follower", fields: [followerId], references: [id])
+  followerId  String
+  following   User   @relation("following", fields: [followingId], references: [id])
+  followingId String
+
+  @@id([followerId, followingId])
 }
 
 model VerificationToken {
