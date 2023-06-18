@@ -31,7 +31,7 @@ const UserProfile = async ({ params: { id } }: IUserProfile) => {
 
   return (
     <main>
-      <h1>{user.name}</h1>
+      <h1>{name}</h1>
       <Image
         src={image ?? '/mememan.webp'}
         alt={`${name}'s avatar`}
